@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Zar</title>
+    <style>
+        @keyframes bg {
+            0% {
+                background-color: red;
+            }
+            10% {
+                background-color: #ff6f00;
+            }
+            20% {
+                background-color: #ffbb00;
+            }
+            30% {
+                background-color: #ffbb00;
+            }
+            40% {
+                background-color: #91ff00;
+            }
+            50% {
+                background-color: #91ff00;
+            }
+            60% {
+                background-color: #00ff59;
+            }
+            70% {
+                background-color: #00ffdd;
+            }
+            80% {
+                background-color: #00ffdd;
+            }
+            90% {
+                background-color: #0022ff;
+            }
+            100% {
+                background-color: #ff00fb;
+            }
+        }
+        
+        body {
+            background-color: black;
+        }
+        
+        img {
+            width: 20vh;
+            margin: 30vh 0vh 0vh 80vh;
+            display: none;
+        }
+        
+        .bt {
+            width: 20vh;
+            height: 5vh;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: bold;
+            margin-left: 80vh;
+            margin-top: 5vh;
+            border-radius: 60px;
+        }
+        
+        .bt:hover {
+            animation: bg 5s infinite alternate;
+            -webkit-animation: bg 5s infinite alternate;
+            -moz-animation: bg 5s infinite alternate;
+            background-color: crimson;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Wrapper">
+        <img id="1" src="1.png">
+        <img id="2" src="2.png">
+        <img id="3" src="3.png">
+        <img id="4" src="4.png">
+        <img id="5" src="5.png">
+        <img id="6" src="6.png">
+
+        <input class="bt" type="button" value="Zar At" onclick="zarAt()">
+    </div>
+    <script>
+        var sayi = 0;
+
+        function zarAt() {
+            sayi = (Math.floor(Math.random() * 6) + 1);
+            var img = document.getElementsByTagName('img');
+
+            for (let i = 0; i < img.length; i++) {
+                img[i].style.display = "none";
+                if (i + 1 == img.length) {
+                    console.log(sayi);
+                    goster();
+                }
+            }
+        }
+
+        function goster() {
+            document.getElementById(`${sayi}`).style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
